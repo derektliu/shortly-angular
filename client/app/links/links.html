@@ -1,9 +1,9 @@
-<div id='link container'>
+<div id='link container' type='text/x-handlebars-template' ng-repeat="userUrl in data.links track by $index">
   <img src='/assets/redirect_icon.png'/>
-  <div class='info'>
-    <div class='visits'><span class='count'>{{visits}}</span>Visits</div>
-    <div class='title'>{{title}}</div>
-    <div class='original'>{{url}}</div>
-    <a href='{{baseUrl}}/{{code}}'>{{baseUrl}}/{{code}}</a>
+  <div class='info' >
+    <div class='visits'><span class='count'>{{userUrl.visits}}</span>Visits</div>
+    <div class='title'>{{userUrl.title}}</div>
+    <div class='original'>{{userUrl.url}}</div>
+    <a href='{{baseUrl}}/{{code}}'>{{userUrl.baseUrl}}/{{userUrl.code}}</a>
   </div>
 </div>

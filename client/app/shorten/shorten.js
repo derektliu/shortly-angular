@@ -4,9 +4,11 @@ angular.module('shortly.shorten', [])
   $scope.link = {};
 
   $scope.addLink = function() {
-    Links.addOne($scope.newLink)
+    
+    $scope.link.url = $scope.newLink;
+
+    Links.addOne($scope.link)
     .then(function(resp) {
-      $scope.link[$scope.newLink] = $scope.newLink;
       $scope.newLink = '';
     });
   };

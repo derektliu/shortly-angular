@@ -11,24 +11,17 @@
     <div class='navigation' ng-controller='NavController'>
     <ul>
       <li><a href='#/links' class='index'>All Links</a></li>
-      <li><a href='#/shorten' class='create' ng-click='checkAuth("/shorten")'>Shorten</a></li>
+      <li><a href='#/shorten' class='create'>Shorten</a></li>
       <li><a class='logout' ng-click='logout()'>Logout</a></li>
     </ul>
     </div>
-<!--     <div ng-controller="LinksController">
-    <a ng-click="test()">Increment</a>
-    <span> 
-      count: {{count}}
-    </span>
-    </div> -->
-
-    <div id='container'></div>
 
     <!-- the ng-view directive is where our templates will be loaded into when naviagted to -->
     <div ng-view></div>
 
     <script src="lib/angular/angular.js"></script>
     <script src="lib/angular-route/angular-route.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
 
     <script src="app/auth/auth.js"></script>
     <script src="app/links/links.js"></script>

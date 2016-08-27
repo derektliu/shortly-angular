@@ -1,7 +1,7 @@
-<div id='create container'>
+<div id='create container' type='text/x-handlebars-template'>
   <form>
-      <input class='text' type='text' name='url'>
-      <input type='submit' value='Shorten'>
+      <input class='text' type='text' ng-model="newLink">
+      <input type='submit' ng-click="addLink()">
   </form>
   <img class='spinner' src='assets/spiffygif_46x46.gif'>
   <div class='message'></div>
