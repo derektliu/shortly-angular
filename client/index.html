@@ -8,6 +8,22 @@
   <body>
     <h1>Shortly</h1>
 
+    <div class='navigation' ng-controller='NavController'>
+    <ul>
+      <li><a class='index' ng-click='checkAuth("/links")'>All Links</a></li>
+      <li><a class='create' ng-click='checkAuth("/shorten")'>Shorten</a></li>
+      <li><a class='logout' ng-click='logout()'>Logout</a></li>
+    </ul>
+    </div>
+<!--     <div ng-controller="LinksController">
+    <a ng-click="test()">Increment</a>
+    <span> 
+      count: {{count}}
+    </span>
+    </div> -->
+
+    <div id='container'></div>
+
     <!-- the ng-view directive is where our templates will be loaded into when naviagted to -->
     <div ng-view></div>
 
@@ -18,6 +34,7 @@
     <script src="app/links/links.js"></script>
     <script src="app/shorten/shorten.js"></script>
     <script src="app/services/services.js"></script>
+    <script src="app/navigation/navigation.js"></script>
     <script src="app/app.js"></script>
   </body>
 </html>

@@ -3,6 +3,7 @@ angular.module('shortly', [
   'shortly.links',
   'shortly.shorten',
   'shortly.auth',
+  'shortly.navigation',
   'ngRoute'
 ])
 .config(function ($routeProvider, $httpProvider) {
@@ -22,6 +23,14 @@ angular.module('shortly', [
     .when('/shorten', {
       templateUrl: 'app/shorten/shorten.html',
       controller: 'ShortenController'
+    })
+    .when('/', {
+      templateUrl: 'app/auth/signin.html',
+      controller: 'AuthController'
+    })
+    .when('/*', {
+      templateUrl: 'app/links/links.html',
+      controller: 'LinksController'
     });
 
     // We add our $httpInterceptor into the array
