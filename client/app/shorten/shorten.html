@@ -1,8 +1,9 @@
 <div id='create container' type='text/x-handlebars-template'>
-  <form>
-      <input class='text' type='text' ng-model="newLink">
-      <input type='submit' ng-click="addLink()">
+  <form name ='urlForm' ng-submit='addLink(urlForm.$valid)' novalidate>
+      <input class='text' type='url' ng-model='newLink'>
+      <button type='submit'>Submit</button>
   </form>
   <img class='spinner' src='assets/spiffygif_46x46.gif'>
-  <div class='message'></div>
+  
+  <div class='message' ng-show='urlForm.$invalid && !urlForm.$pristine' >Bad Link Format.</div>
 </div>
