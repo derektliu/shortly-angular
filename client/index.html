@@ -10,8 +10,8 @@
 
     <div class='navigation' ng-controller='NavController'>
     <ul>
-      <li><a class='index' ng-click='checkAuth("/links")'>All Links</a></li>
-      <li><a class='create' ng-click='checkAuth("/shorten")'>Shorten</a></li>
+      <li><a href='#/links' class='index'>All Links</a></li>
+      <li><a href='#/shorten' class='create' ng-click='checkAuth("/shorten")'>Shorten</a></li>
       <li><a class='logout' ng-click='logout()'>Logout</a></li>
     </ul>
     </div>
