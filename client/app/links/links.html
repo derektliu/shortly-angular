@@ -1,9 +1,16 @@
-<div id='link container' type='text/x-handlebars-template' ng-repeat="userUrl in data.links track by $index">
+<button ng-click='sortType = "visits"; sortReverse = !sortReverse'>Sort by Visits</button>
+<button ng-click='sortType = "title"; sortReverse = !sortReverse'>Sort by Title</button>
+<button ng-click='sortType = "url"; sortReverse = !sortReverse'>Sort by Url</button>
+  <div class="alert alert-info">
+  <input ng-model='searchLink'>Search</input>
+  </div>
+  <!-- type='text/x-handlebars-template'  -->
+<div id='link container' ng-repeat="userUrl in data.links | orderBy:sortType:sortReverse | filter:searchLink">
   <img src='/assets/redirect_icon.png'/>
   <div class='info' >
     <div class='visits'><span class='count'>{{userUrl.visits}}</span>Visits</div>
     <div class='title'>{{userUrl.title}}</div>
     <div class='original'>{{userUrl.url}}</div>
-    <a href='{{baseUrl}}/{{code}}'>{{userUrl.baseUrl}}/{{userUrl.code}}</a>
+    <a ng-href='{{userUrl.baseUrl}}/{{userUrl.code}}'>{{userUrl.baseUrl}}/{{userUrl.code}}</a>
   </div>
 </div>
